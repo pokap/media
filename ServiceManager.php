@@ -3,16 +3,16 @@
 /**
  * this file is part of the pok package.
  *
- * (c) florent denis <dflorent.pokap@gmail.com>
+ * (c) florent denis <florentdenisp@gmail.com>
  *
  * for the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Reseau\Components\Media;
+namespace Pok\Media;
 
 /**
- * @author Florent Denis <dflorent.pokap@gmail.com>
+ * @author Florent Denis <florentdenisp@gmail.com>
  */
 class ServiceManager
 {
@@ -117,7 +117,7 @@ class ServiceManager
             return null;
         }
 
-        return $this->services[$name][self::SERVICE_FILTER];
+        return $this->services[$name][self::SERVICE_FILTERS];
     }
 
     /**
@@ -172,10 +172,10 @@ class ServiceManager
      */
     public function searchService($likeFilter)
     {
-        foreach ($this->services as $service) {
-            foreach ($service[self::SERVICE_FILTER] as $filter) {
+        foreach ($this->services as $name => $service) {
+            foreach ($service[self::SERVICE_FILTERS] as $filter) {
                 if (strpos($likeFilter, $filter) === 0) {
-                    return $service;
+                    return $name;
                 }
             }
         }

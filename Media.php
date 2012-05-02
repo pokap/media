@@ -3,39 +3,39 @@
 /**
  * this file is part of the pok package.
  *
- * (c) florent denis <dflorent.pokap@gmail.com>
+ * (c) florent denis <florentdenisp@gmail.com>
  *
  * for the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Reseau\Components\Media;
+namespace Pok\Media;
 
-use Reseau\Components\Media\Cache\CacheInterface;
-use Reseau\Components\Media\Cache\ArrayCache;
-use Reseau\Components\Media\Service\ServiceManager;
-use Reseau\Components\Media\MediaInterface;
-use Reseau\Components\Uri\UriInterface;
+use Pok\Media\Cache\CacheInterface;
+use Pok\Media\Cache\ArrayCache;
+use Pok\Media\ServiceManager;
+use Pok\Media\MediaInterface;
+use Zend\Uri\Uri;
 
 /**
- * @author Florent Denis <dflorent.pokap@gmail.com>
+ * @author Florent Denis <florentdenisp@gmail.com>
  */
 class Media implements MediaInterface
 {
     /**
-     * @var \Reseau\Components\Media\ServiceManager
+     * @var \Pok\Media\ServiceManager
      */
     private $serviceManager;
 
     /**
-     * @var \Reseau\Components\Media\Cache\CacheInterface
+     * @var \Pok\Media\Cache\CacheInterface
      */
     private $cache;
 
     /**
      * Constructor.
      *
-     * @param null|\Reseau\Components\Media\Cache\CacheInterface $cache
+     * @param null|\Pok\Media\Cache\CacheInterface $cache
      */
     public function __construct(CacheInterface $cache = null)
     {
@@ -49,7 +49,7 @@ class Media implements MediaInterface
     }
 
     /**
-     * @return \Reseau\Components\Media\ServiceManager
+     * @return \Pok\Media\ServiceManager
      */
     public function getServiceManager()
     {
@@ -57,7 +57,7 @@ class Media implements MediaInterface
     }
 
     /**
-     * @param \Reseau\Components\Media\Cache\CacheInterface $cache
+     * @param \Pok\Media\Cache\CacheInterface $cache
      */
     public function setCache(CacheInterface $cache)
     {
@@ -65,7 +65,7 @@ class Media implements MediaInterface
     }
 
     /**
-     * @return \Reseau\Components\Media\Cache\CacheInterface
+     * @return \Pok\Media\Cache\CacheInterface
      */
     public function getCache()
     {
@@ -73,11 +73,11 @@ class Media implements MediaInterface
     }
 
     /**
-     * @param \Reseau\Components\Uri\UriInterface $uri
+     * @param \Zend\Uri\Uri $uri
      *
-     * @return boolean|\Reseau\Components\Media\ServiceInterface False if service or namespace nofound
+     * @return boolean|\Pok\Media\ServiceInterface False if service or namespace nofound
      */
-    public function analyse(UriInterface $uri)
+    public function analyse(Uri $uri)
     {
         $service = $this->serviceManager->searchService($uri->toString());
         if (false === $service) {
@@ -85,12 +85,12 @@ class Media implements MediaInterface
         }
 
         $namespace = $this->serviceManager->getServiceNamespace($service);
-        if ($namespace === '') {
+        if (null === $namespace || $namespace === '') {
             return false;
         }
 
         $clear = $namespace::clearUri($uri);
-        if (false !== $uri) {
+        if (false === $uri) {
             return false;
         }
 

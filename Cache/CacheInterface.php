@@ -3,31 +3,31 @@
 /**
  * this file is part of the pok package.
  *
- * (c) florent denis <dflorent.pokap@gmail.com>
+ * (c) florent denis <florentdenisp@gmail.com>
  *
  * for the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Reseau\Components\Media\Cache;
+namespace Pok\Media\Cache;
 
-use Reseau\Components\Media\Service\ServiceInterface;
+use Pok\Media\ServiceInterface;
 
 /**
- * @author Florent Denis <dflorent.pokap@gmail.com>
+ * @author Florent Denis <florentdenisp@gmail.com>
  */
 interface CacheInterface
 {
     /**
      * @param string $url
-     * @param \Reseau\Components\Media\Service\ServiceInterface $service
+     * @param \Pok\Media\ServiceInterface $service
      */
     function set($url, ServiceInterface $service);
 
     /**
      * @param string $url
      *
-     * @return null|\Reseau\Components\Media\Service\ServiceInterface
+     * @return null|\Pok\Media\ServiceInterface
      */
     function get($url);
 

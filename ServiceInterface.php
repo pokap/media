@@ -3,36 +3,36 @@
 /**
  * this file is part of the pok package.
  *
- * (c) florent denis <dflorent.pokap@gmail.com>
+ * (c) florent denis <florentdenisp@gmail.com>
  *
  * for the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Reseau\Components\Media\Service;
+namespace Pok\Media;
 
-use Reseau\Components\Uri\UriInterface;
+use Zend\Uri\Uri;
 
 /**
- * @author Florent Denis <dflorent.pokap@gmail.com>
+ * @author Florent Denis <florentdenisp@gmail.com>
  */
 interface ServiceInterface
 {
     /**
-     * @param \Reseau\Components\Uri\UriInterface $uri
+     * @param \Zend\Uri\Uri $uri
      */
-    function parse(UriInterface $uri);
+    function parse(Uri $uri);
 
     /**
      * Get clear uri.
      *
      * @static
      *
-     * @param \Reseau\Components\Uri\UriInterface $uri
+     * @param \Zend\Uri\Uri $uri
      *
-     * @return boolean|\Reseau\Components\Uri\Uri False if uri is not auhorized
+     * @return boolean|\Zend\Uri\Uri False if uri is not auhorized
      */
-    static function clearUri(UriInterface $uri);
+    static function clearUri(Uri $uri);
 
     /**
      * @return string

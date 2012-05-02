@@ -27,9 +27,11 @@
     ],
     "require": {
         "php": ">=5.3",
+        "brikou/zend_uri": "*",
         "scottmac/opengraph": "*"
     },
     "autoload": {
-        "psr-0": { "PokMedia": "lib/" }
-    }
+        "psr-0": { "Pok\\Media": "", "OpenGraph": "vendor/scottmac/opengraph" }
+    },
+    "target-dir": "Pok/Media"
 }

@@ -3,24 +3,24 @@
 /**
  * this file is part of the pok package.
  *
- * (c) florent denis <dflorent.pokap@gmail.com>
+ * (c) florent denis <florentdenisp@gmail.com>
  *
  * for the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Reseau\Components\Media\Cache;
+namespace Pok\Media\Cache;
 
-use Reseau\Components\Media\Service\ServiceInterface;
-use Reseau\Components\Media\Cache\CacheInterface;
+use Pok\Media\ServiceInterface;
+use Pok\Media\Cache\CacheInterface;
 
 /**
- * @author Florent Denis <dflorent.pokap@gmail.com>
+ * @author Florent Denis <florentdenisp@gmail.com>
  */
 class ArrayCache implements CacheInterface
 {
     /**
-     * @var array<string, \Reseau\Components\Media\Service\ServiceInterface>
+     * @var array<string, \Pok\Media\ServiceInterface>
      */
     private $medias;
 
@@ -34,7 +34,7 @@ class ArrayCache implements CacheInterface
 
     /**
      * @param string $url
-     * @param \Reseau\Components\Media\Service\ServiceInterface $service
+     * @param \Pok\Media\ServiceInterface $service
      */
     public function set($url, ServiceInterface $service)
     {
@@ -44,7 +44,7 @@ class ArrayCache implements CacheInterface
     /**
      * @param string $url
      *
-     * @return null|\Reseau\Components\Media\Service\ServiceInterface
+     * @return null|\Pok\Media\ServiceInterface
      */
     function get($url)
     {

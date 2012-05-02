@@ -3,21 +3,20 @@
 /**
  * this file is part of the pok package.
  *
- * (c) florent denis <dflorent.pokap@gmail.com>
+ * (c) florent denis <florentdenisp@gmail.com>
  *
  * for the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Reseau\Bridge\DoctrineMongoDB\Structure\Article\Media\Service;
+namespace Pok\Media\Service;
 
-use Reseau\Components\Media\Service\ServiceInterface;
-use Reseau\Components\Uri\Uri;
-use Reseau\Components\Uri\UriInterface;
+use Pok\Media\ServiceInterface;
+use Zend\Uri\Uri;
 
 /**
  * @since 2.0
- * @author Florent Denis <dflorent.pokap@gmail.com>
+ * @author Florent Denis <florentdenisp@gmail.com>
  */
 class Deezer implements ServiceInterface
 {
@@ -53,9 +52,9 @@ class Deezer implements ServiceInterface
     private $image;
 
     /**
-     * @param \Reseau\Components\Uri\UriInterface $uri
+     * @param \Zend\Uri\Uri $uri
      */
-    public function parse(UriInterface $uri)
+    public function parse(Uri $uri)
     {
         $this->url = $uri->toString();
 
@@ -81,13 +80,13 @@ class Deezer implements ServiceInterface
      *
      * @static
      *
-     * @param \Reseau\Components\Uri\UriInterface $uri
+     * @param \Zend\Uri\Uri $uri
      *
-     * @return boolean|\Reseau\Components\Uri\Uri False if uri is not auhorized
+     * @return boolean|\Zend\Uri\Uri False if uri is not auhorized
      */
-    public static function clearUri(UriInterface $uri)
+    public static function clearUri(Uri $uri)
     {
-        if ($uri->getSchema() !== 'http') {
+        if ($uri->getScheme() !== 'http') {
             return false;
         }
 
@@ -107,11 +106,10 @@ class Deezer implements ServiceInterface
         $uri->setHost('www.deezer.com');
 
         // clear
-        $uri->setPort(null);
-        $uri->setUsername(null);
-        $uri->setPassword(null);
-        $uri->setQuery(null);
-        $uri->setFragment(null);
+        $uri->setPort(0);
+        $uri->setUserInfo('');
+        $uri->setQuery('');
+        $uri->setFragment('');
 
         return $uri;
     }
