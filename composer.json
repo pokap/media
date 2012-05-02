@@ -1,0 +1,35 @@
+{
+    "name": "Pokap/media",
+    "description": "",
+    "keywords": [],
+    "type": "library",
+    "licence": "MIT",
+    "authors": [
+        {
+            "name": "Florent DENIS",
+            "email": "dflorent.pokap@gmail.com",
+            "homepage": "http://www.florentdenis.net"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "scottmac/opengraph",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/scottmac/opengraph.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "scottmac/opengraph": "*"
+    },
+    "autoload": {
+        "psr-0": { "PokMedia": "lib/" }
+    }
+}
