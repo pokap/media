@@ -26,11 +26,13 @@ $media->getServiceManager()->setService(
     array('http:\/\/(www\.)?youtube\.com')
 );
 
-$uri = new \Zend\Uri\Uri('http://www.youtube.com/watch?v=uh9oUHO2dxE?useless_data');
+$uri = new \Zend\Uri\Uri('http://www.youtube.com/watch?v=uh9oUHO2dxE&useless_data');
 
 // get instance of \Pok\Media\Service\Youtube with id (uh9oUHO2dxE), title, description of video, etc.
 // false if error.
 $service = $media->analyse($uri);
+
+echo $uri->toString(); // http://www.youtube.com/watch?v=uh9oUHO2dxE
 
 ?>
 ```
