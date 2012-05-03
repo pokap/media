@@ -41,5 +41,15 @@ class Media extends atoum\test
             ->boolean($media->getCache()->has($url))
                 ->isEqualTo(true)
         ;
+
+        // hack cache
+        $media->getCache()->set($url, new $youtube_namespace());
+        // do believe that the link is dead
+        $service = $media->analyse($uri);
+
+        $this->assert
+            ->variable($service->getId())
+                ->isNull()
+        ;
     }
 }

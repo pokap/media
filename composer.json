@@ -1,7 +1,7 @@
 {
     "name": "Pokap/media",
-    "description": "",
-    "keywords": [],
+    "description": "Simply media loading meta-data per link.",
+    "keywords": ["media","link","meta-data"],
     "type": "library",
     "licence": "MIT",
     "authors": [
@@ -31,7 +31,10 @@
         "scottmac/opengraph": "*"
     },
     "autoload": {
-        "psr-0": { "Pok\\Media": "", "OpenGraph": "vendor/scottmac/opengraph" }
+        "psr-0": {
+            "Pok\\Media": "",
+            "OpenGraph": "vendor/scottmac/opengraph"
+        }
     },
     "target-dir": "Pok/Media"
 }
