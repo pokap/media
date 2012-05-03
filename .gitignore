@@ -1,3 +1,4 @@
-vendor/*
-composer.lock
+/mageekguy.atoum.phar
+/nbproject
+/vendor
 .idea

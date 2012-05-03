@@ -11,4 +11,4 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once __DIR__ . '/../../../mageekguy.atoum.phar';
+require_once __DIR__ . '/../mageekguy.atoum.phar';
