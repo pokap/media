@@ -29,27 +29,27 @@ class Deezer implements ServiceInterface
     /**
      * @var string
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $url;
+    protected $url;
 
     /**
      * @var string
      */
-    private $title;
+    protected $title;
 
     /**
      * @var string
      */
-    private $description;
+    protected $description;
 
     /**
      * @var string
      */
-    private $image;
+    protected $image;
 
     /**
      * @param \Zend\Uri\Uri $uri

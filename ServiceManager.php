@@ -16,17 +16,14 @@ namespace Pok\Media;
  */
 class ServiceManager
 {
-    /**
-     * @const integer
-     */
-    const
-        SERVICE_FILTERS   = 0,
-        SERVICE_NAMESPACE = 1;
+    const SERVICE_FILTERS   = 0;
+
+    const SERVICE_NAMESPACE = 1;
 
     /**
      * @var array
      */
-    private $services;
+    protected $services;
 
     /**
      * Constructor.
@@ -48,9 +45,11 @@ class ServiceManager
     }
 
     /**
-     * @param string      $name
-     * @param string      $namespace
-     * @param null|string $filter
+     * Setting service with namespace and filter(s), if don't exists, he created.
+     *
+     * @param string            $name
+     * @param string            $namespace
+     * @param null|string|array $filter
      */
     public function setService($name, $namespace, $filter = null)
     {
@@ -70,8 +69,10 @@ class ServiceManager
     }
 
     /**
-     * @param string $name
-     * @param string $filter
+     * Adding filter(s) in the service, if don't exists, he created.
+     *
+     * @param string       $name
+     * @param string|array $filter The pattern to search for url, as a regex
      */
     public function addServiceFilter($name, $filter)
     {
@@ -97,6 +98,8 @@ class ServiceManager
     }
 
     /**
+     * @param string $name
+     *
      * @return null|string
      */
     public function getServiceNamespace($name)
@@ -109,6 +112,8 @@ class ServiceManager
     }
 
     /**
+     * @param string $name
+     *
      * @return null|array
      */
     public function getServiceFilters($name)
@@ -144,8 +149,10 @@ class ServiceManager
     }
 
     /**
-     * @param string $name
-     * @param string $filter
+     * @param string       $name
+     * @param string|array $filter
+     *
+     * @return boolean
      */
     public function removeServiceFilter($name, $filters)
     {
@@ -163,6 +170,8 @@ class ServiceManager
                 unset($this->services[$name][$position]);
             }
         }
+
+        return true;
     }
 
     /**
@@ -174,7 +183,7 @@ class ServiceManager
     {
         foreach ($this->services as $name => $service) {
             foreach ($service[self::SERVICE_FILTERS] as $filter) {
-                if (strpos($likeFilter, $filter) === 0) {
+                if (preg_match(sprintf('/^%s/i', $filter), $likeFilter) === 1) {
                     return $name;
                 }
             }

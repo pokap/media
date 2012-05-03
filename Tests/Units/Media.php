@@ -26,7 +26,7 @@ class Media extends atoum\test
         $youtube_namespace = 'Pok\\Media\\Service\\Youtube';
 
         $media = new \Pok\Media\Media();
-        $media->getServiceManager()->setService('youtube', $youtube_namespace, 'http://www.youtube.com');
+        $media->getServiceManager()->setService('youtube', $youtube_namespace, 'http:\/\/(www\.)?youtube\.com');
 
         $url = 'http://www.youtube.com/watch?v=uh9oUHO2dxE';
         $uri = new Uri($url . '&_test=1');
