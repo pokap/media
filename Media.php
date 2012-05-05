@@ -108,10 +108,6 @@ class Media implements MediaInterface
 
         $this->cache->set($keyCache, $analyser);
 
-        if (!$analyser->getId()) {
-            return false;
-        }
-
         return $analyser;
     }
 }
