@@ -20,7 +20,7 @@ use Pok\Media\Cache\CacheInterface;
 class ArrayCache implements CacheInterface
 {
     /**
-     * @var array<string, \Pok\Media\Service\ServiceInterface>
+     * @var array<string, mixed>
      */
     private $medias;
 
@@ -34,9 +34,9 @@ class ArrayCache implements CacheInterface
 
     /**
      * @param string $url
-     * @param \Pok\Media\Service\ServiceInterface $service
+     * @param mixed  $service
      */
-    public function set($url, ServiceInterface $service)
+    public function set($url, $service)
     {
         $this->medias[$url] = $service;
     }
@@ -44,7 +44,7 @@ class ArrayCache implements CacheInterface
     /**
      * @param string $url
      *
-     * @return null|\Pok\Media\Service\ServiceInterface
+     * @return mixed
      */
     function get($url)
     {

@@ -11,8 +11,6 @@
 
 namespace Pok\Media\Cache;
 
-use Pok\Media\Service\ServiceInterface;
-
 /**
  * @author Florent Denis <florentdenisp@gmail.com>
  */
@@ -20,14 +18,14 @@ interface CacheInterface
 {
     /**
      * @param string $url
-     * @param \Pok\Media\Service\ServiceInterface $service
+     * @param mixed  $service
      */
-    function set($url, ServiceInterface $service);
+    function set($url, $service);
 
     /**
      * @param string $url
      *
-     * @return null|\Pok\Media\Service\ServiceInterface
+     * @return mixed
      */
     function get($url);
 
