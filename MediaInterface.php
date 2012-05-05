@@ -26,7 +26,7 @@ interface MediaInterface
     /**
      * @param \Zend\Uri\Uri $uri
      *
-     * @return boolean|\Pok\Media\ServiceInterface False if service or namespace nofound
+     * @return boolean|\Pok\Media\Service\ServiceInterface False if service or namespace nofound
      */
     function analyse(Uri $uri);
 }

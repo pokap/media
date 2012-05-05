@@ -75,7 +75,7 @@ class Media implements MediaInterface
     /**
      * @param \Zend\Uri\Uri $uri
      *
-     * @return boolean|\Pok\Media\ServiceInterface False if service or namespace nofound
+     * @return boolean|\Pok\Media\Service\ServiceInterface False if service or namespace nofound
      */
     public function analyse(Uri $uri)
     {
@@ -90,12 +90,10 @@ class Media implements MediaInterface
         }
 
         $clear = $namespace::clearUri($uri);
-        if (false === $uri) {
+        if (false === $clear) {
             return false;
         }
 
-        // clear current uri
-        $uri = $clear;
         $keyCache = $uri->toString();
 
         // cache because the analyse process requires a lot of resources

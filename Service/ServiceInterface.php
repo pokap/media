@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Pok\Media;
+namespace Pok\Media\Service;
 
 use Zend\Uri\Uri;
 

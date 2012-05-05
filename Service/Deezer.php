@@ -11,7 +11,7 @@
 
 namespace Pok\Media\Service;
 
-use Pok\Media\ServiceInterface;
+use Pok\Media\Service\ServiceInterface;
 use Zend\Uri\Uri;
 
 /**
