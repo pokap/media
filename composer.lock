@@ -1,10 +1,10 @@
 {
-    "hash": "6caceb47bc0046d2d100a88b52ee2c4d",
+    "hash": "3e8a80f9e9725966ac407a473c61e64f",
     "packages": [
         {
             "package": "brikou/zend_uri",
             "version": "dev-master",
-            "source-reference": "469328dbe76ff1a882cd3bbe98042cc978d5a9ef"
+            "source-reference": "582a42210560eb9271a4529b78d0e07fbdbf6b74"
         },
         {
             "package": "scottmac/opengraph",
