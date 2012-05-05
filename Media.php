@@ -25,12 +25,12 @@ class Media implements MediaInterface
     /**
      * @var \Pok\Media\ServiceManager
      */
-    private $serviceManager;
+    protected $serviceManager;
 
     /**
      * @var \Pok\Media\Cache\CacheInterface
      */
-    private $cache;
+    protected $cache;
 
     /**
      * Constructor.
