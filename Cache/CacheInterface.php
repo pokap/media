@@ -17,8 +17,15 @@ namespace Pok\Media\Cache;
 interface CacheInterface
 {
     /**
+     * @return array
+     */
+    function getRaw();
+
+    /**
      * @param string $url
      * @param mixed  $service
+     *
+     * @return mixed
      */
     function set($url, $service);
 

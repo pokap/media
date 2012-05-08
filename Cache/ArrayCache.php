@@ -33,12 +33,22 @@ class ArrayCache implements CacheInterface
     }
 
     /**
+     * @return array<string, mixed>
+     */
+    public function getRaw()
+    {
+        return $this->medias;
+    }
+
+    /**
      * @param string $url
      * @param mixed  $service
      */
     public function set($url, $service)
     {
         $this->medias[$url] = $service;
+
+        return $service;
     }
 
     /**

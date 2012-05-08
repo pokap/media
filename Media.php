@@ -75,7 +75,7 @@ class Media implements MediaInterface
     /**
      * @param \Zend\Uri\Uri $uri
      *
-     * @return boolean|\Pok\Media\Service\ServiceInterface False if service or namespace nofound
+     * @return mixed False if service or namespace nofound
      */
     public function analyse(Uri $uri)
     {
@@ -106,8 +106,6 @@ class Media implements MediaInterface
         $analyser = new $namespace();
         $analyser->parse($uri);
 
-        $this->cache->set($keyCache, $analyser);
-
-        return $analyser;
+        return $this->cache->set($keyCache, $analyser);
     }
 }
