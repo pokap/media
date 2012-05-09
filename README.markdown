@@ -3,10 +3,10 @@ Link Media
 
 A simple way to get metadata of media link.
 
-**Requires** at least *PHP 5.3.3* because uses Zend Uri library. Compatible PHP 5.4 too.
+**Requires** at least *PHP 5.3.3* because uses Zend library. Compatible PHP 5.4 too.
 
-This package uses unofficial Zend Uri (https://github.com/brikou/zend_uri), waiting out stable zf2
-and OpenGraph (https://github.com/scottmac/opengraph) to get meta-data with open graph protocol (http://ogp.me/).
+This package uses official Zend Uri (https://github.com/zendframework/zf2), and OpenGraph
+(https://github.com/scottmac/opengraph) to get meta-data with open graph protocol (http://ogp.me/).
 
 [![Build Status](https://secure.travis-ci.org/Pokap/media.png?branch=master)](http://travis-ci.org/Pokap/media)
 
