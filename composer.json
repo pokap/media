@@ -26,8 +26,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3",
-        "brikou/zend_uri": "*",
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "*",
         "scottmac/opengraph": "*"
     },
     "autoload": {
