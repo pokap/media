@@ -1,5 +1,5 @@
 {
-    "name": "Pokap/media",
+    "name": "pokap/media",
     "description": "Simply media loading meta-data per link.",
     "keywords": ["media","link","meta-data"],
     "type": "library",
