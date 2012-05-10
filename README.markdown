@@ -8,7 +8,7 @@ A simple way to get metadata of media link.
 This package uses Zend framework (https://github.com/zendframework/zf2), and OpenGraph
 (https://github.com/scottmac/opengraph) to get meta-data with open graph protocol (http://ogp.me/).
 
-[![Build Status](https://secure.travis-ci.org/Pokap/media.png?branch=master)](http://travis-ci.org/Pokap/media)
+[![Build Status](https://secure.travis-ci.org/pokap/media.png?branch=master)](http://travis-ci.org/pokap/media)
 
 Usage
 -------------
