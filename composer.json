@@ -7,7 +7,7 @@
     "authors": [
         {
             "name": "Florent DENIS",
-            "email": "florentdenisp@gmail.com",
+            "email": "dflorent.pokap@gmail.com",
             "homepage": "http://www.florentdenis.net"
         }
     ],
@@ -16,7 +16,7 @@
             "type": "package",
             "package": {
                 "name": "scottmac/opengraph",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/scottmac/opengraph.git",
                     "type": "git",
@@ -27,8 +27,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "*",
-        "scottmac/opengraph": "*"
+        "zendframework/zend-uri": ">=2.0,<2.2-dev",
+        "scottmac/opengraph": "dev-master"
     },
     "autoload": {
         "psr-0": {
