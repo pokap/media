@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zend-uri": ">=2.0,<2.2-dev",
+        "zendframework/zend-uri": ">=2.0,<2.4-dev",
         "scottmac/opengraph": "dev-master"
     },
     "autoload": {
